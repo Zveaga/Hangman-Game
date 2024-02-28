@@ -28,6 +28,8 @@ class Drawing
 		void drawRighArm(); 
 		void drawLeftLeg();
 		void drawRightLeg();
+		
+		void drawLetterSpots(int numLeters);
 };
 
 #endif

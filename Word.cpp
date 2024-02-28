@@ -12,7 +12,7 @@ Word::Word()
 	this->word = "EMPTY";	
 }
 
-Word::Word(std::string word)
+Word::Word(const std::string &word)
 {
 	std::cout << "Name constructor called\n"; 
 	this->word = word;
@@ -32,4 +32,10 @@ std::string Word::getWord(void)
 {
 	return(this->word);
 }
+
+void Word::setWord(const std::string &word)
+{
+	this->word = word;
+}
+
 

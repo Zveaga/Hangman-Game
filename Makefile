@@ -6,7 +6,7 @@
 #    By: coxer <coxer@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/31 15:14:30 by coxer         #+#    #+#                  #
-#    Updated: 2024/02/27 19:41:09 by coxer         ########   odam.nl          #
+#    Updated: 2024/02/28 19:08:05 by rares         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ NAME = hangman
 SRC = \
 main.cpp \
 Drawing.cpp \
-Progress.cpp \
+Game.cpp \
 Word.cpp \
 
 OBJ = $(SRC:.cpp=.o)

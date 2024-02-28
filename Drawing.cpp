@@ -80,30 +80,6 @@ void Drawing::drawHead()
 
 }
 
-// void Drawing::drawHead()
-// {
-
-// 	canvas[4][34] = '-';
-// 	canvas[4][33] = '-';
-// 	canvas[4][35] = '-';
-
-// 	canvas[5][32] = '(';
-// 	canvas[5][36] = ')';
-
-// 	canvas[6][34] = '-';
-// 	canvas[6][33] = '-';
-// 	canvas[6][35] = '-';
-
-// 	canvas[5][33] = '.';
-// 	canvas[5][35] = '.';
-
-// 	std::cout << " __\n";
-// 	std::cout << "/..\\\n";
-// 	std::cout << "\\__/\n";
-// 	// std::cout << " -\n";
-
-// }
-
 void Drawing::drawBody()
 {
 	for (int i = 7; i < 10; i++)
@@ -129,4 +105,15 @@ void Drawing::drawLeftLeg()
 void Drawing::drawRightLeg()
 {
 	canvas[10][35] = '\\';
+}
+
+void Drawing::drawLetterSpots(int numLeters)
+{
+	for (int j = 4; j < numLeters + 4; j++)
+	{
+		if (numLeters > 1)
+		
+		canvas[11][j] = '_';
+		
+	}
 }

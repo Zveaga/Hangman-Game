@@ -1,6 +1,6 @@
 #include"Word.hpp"
 #include"Drawing.hpp"
-#include"Progress.hpp"
+#include"Game.hpp"
 
 int main(void)
 {
@@ -8,6 +8,11 @@ int main(void)
 
 	Drawing drawing;
 	
+
+
+	Game game(drawing);
+	game.setupGame();
+
 	drawing.drawPole();
 	drawing.drawHead();
 	drawing.drawBody();
@@ -16,8 +21,6 @@ int main(void)
 	drawing.drawLeftLeg();
 	drawing.drawRightLeg();
 	drawing.printCanvas();
-
-	
 	
 	//std::cout << "\n===============END===============\n";
 	

@@ -10,13 +10,15 @@ class Word
 	public:
 		// --Constructors-- //
 		Word();
-		Word(std::string word);
+		Word(const std::string &word);
 		// --Destructor-- //
 		~Word();
 		// --Overloads-- //
 		
 		// --Member Functions-- //
 		std::string getWord(void);
+		void setWord(const std::string &word);
+
 
 };
 

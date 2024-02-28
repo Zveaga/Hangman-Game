@@ -1,18 +1,32 @@
 #include"Drawing.hpp"
 
 
+// --Constructors-- //
+Drawing::Drawing()
+{
+	initCanvas();
+}
+
+// --Destructor-- //
+Drawing::~Drawing()
+{
+	
+}
+
+// --Overloads-- //
 
 
-
-
-
-
-
-void Drawing::drawCanvas()
+// --Member Functions-- //
+void Drawing::initCanvas()
 {
 	for (int i = 0; i < ROWS; i++)
 		for (int j = 0; j < COLS; j++)
 			canvas[i][j] = ' ';
+	
+	for (int j = 0; j < COLS; j++)
+		canvas[0][j] = '=';
+	for (int j = 0; j < COLS; j++)
+		canvas[ROWS - 1][j] = '=';
 }
 
 void Drawing::printCanvas()

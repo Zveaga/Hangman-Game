@@ -4,11 +4,9 @@
 
 int main(void)
 {
-	std::cout << "==============START==============\n\n";
+	//std::cout << "==============START==============\n\n";
 
 	Drawing drawing;
-	
-	drawing.drawCanvas();
 	
 	drawing.drawPole();
 	
@@ -16,7 +14,7 @@ int main(void)
 
 	
 	
-	std::cout << "\n===============END===============\n";
+	//std::cout << "\n===============END===============\n";
 	
 	return (0);
 }

@@ -1,5 +1,11 @@
 #include"Word.hpp"
 
+
+
+
+
+
+// --Constructors-- //
 Word::Word()
 {
 	std::cout << "Basic constructor called\n"; 
@@ -12,11 +18,16 @@ Word::Word(std::string word)
 	this->word = word;
 }
 
+// --Destructor-- //
 Word::~Word()
 {
 	std::cout << "Word object destructed\n"; 
 }
 
+// --Overloads-- //
+
+
+// --Member Functions-- //
 std::string Word::getWord(void)
 {
 	return(this->word);

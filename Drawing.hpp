@@ -19,7 +19,7 @@ class Drawing
 		// --Overloads-- //
 		
 		// --Member Functions-- //
-		void drawCanvas();
+		void initCanvas();
 		void printCanvas();
 		void drawPole(); 
 		void drawHead(); 

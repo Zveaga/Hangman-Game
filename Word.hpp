@@ -18,10 +18,6 @@ class Word
 		// --Member Functions-- //
 		std::string getWord(void);
 
-
-
-	void
-
 };
 
 #endif

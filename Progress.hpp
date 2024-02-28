@@ -3,8 +3,16 @@
 
 #include<iostream>
 
+
+
 class Progress
 {
+		
+		
+		// --Constructors-- //
+		// --Destructor-- //
+		// --Overloads-- //
+		// --Member Functions-- //
 
 };
 

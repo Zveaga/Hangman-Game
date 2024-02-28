@@ -3,18 +3,24 @@
 
 #include<iostream>
 
+#define ROWS 10
+#define COLS 40
+
 class Drawing
 {
 	private:
-		std::string pole;
-		std::string head;
-		std::string body;
-		std::string left_arm;
-		std::string right_arm;
-		std::string pole;
-		std::string pole;
-		std::string pole;
+		char canvas[ROWS][COLS];
 	public:
+		// --Constructors-- //
+		Drawing();
+		// --Destructor-- //
+		~Drawing();
+		
+		// --Overloads-- //
+		
+		// --Member Functions-- //
+		void drawCanvas();
+		void printCanvas();
 		void drawPole(); 
 		void drawHead(); 
 		void drawBody();

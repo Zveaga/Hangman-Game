@@ -1,13 +1,22 @@
 #include"Word.hpp"
+#include"Drawing.hpp"
+#include"Progress.hpp"
 
 int main(void)
 {
-	std::cout << "==============START==============\n";
+	std::cout << "==============START==============\n\n";
 
-	std::cout << "TEST!\n";
+	Drawing drawing;
+	
+	drawing.drawCanvas();
+	
+	drawing.drawPole();
+	
+	drawing.printCanvas();
+
 	
 	
-	std::cout << "===============END===============\n";
+	std::cout << "\n===============END===============\n";
 	
 	return (0);
 }

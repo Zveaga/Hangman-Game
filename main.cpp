@@ -9,7 +9,12 @@ int main(void)
 	Drawing drawing;
 	
 	drawing.drawPole();
-	
+	drawing.drawHead();
+	drawing.drawBody();
+	drawing.drawLeftArm();
+	drawing.drawRighArm();
+	drawing.drawLeftLeg();
+	drawing.drawRightLeg();
 	drawing.printCanvas();
 
 	

@@ -3,8 +3,8 @@
 
 #include<iostream>
 
-#define ROWS 10
-#define COLS 40
+#define ROWS 15
+#define COLS 50
 
 class Drawing
 {

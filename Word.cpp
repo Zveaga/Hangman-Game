@@ -1,10 +1,6 @@
 #include"Word.hpp"
 
 
-
-
-
-
 // --Constructors-- //
 Word::Word()
 {

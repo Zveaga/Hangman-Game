@@ -28,6 +28,10 @@ class Game
 
 		void startGame();
 		void endGame();
+
+		int getWordLen() const;
+
+
 		
 };
 

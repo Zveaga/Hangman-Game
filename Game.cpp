@@ -65,7 +65,7 @@ void Game::setPlayerCount()
 
 void Game::setupGame()
 {
-	this->setPlayerCount();
+	//this->setPlayerCount();
 	this->setWord();
 
 	drawing.drawLetterSpots(this->word.length());
@@ -84,4 +84,9 @@ void Game::startGame()
 void Game::endGame()
 {
 
+}
+
+int Game::getWordLen() const
+{
+	return (this->word.length());
 }

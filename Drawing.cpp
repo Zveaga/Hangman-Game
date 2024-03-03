@@ -109,11 +109,9 @@ void Drawing::drawRightLeg()
 
 void Drawing::drawLetterSpots(int numLeters)
 {
-	for (int j = 4; j < numLeters + 4; j++)
-	{
-		if (numLeters > 1)
-		
-		canvas[11][j] = '_';
-		
-	}
+	if (numLeters == 1)
+		canvas[11][4] = '_';
+	else
+		for (int j = 4; j < (numLeters * 2) + 4; j++)
+			canvas[11][++j] = '_';
 }

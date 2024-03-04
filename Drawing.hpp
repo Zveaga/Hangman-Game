@@ -10,6 +10,7 @@ class Drawing
 {
 	private:
 		char canvas[ROWS][COLS];
+		
 	public:
 		// --Constructors-- //
 		Drawing();
@@ -28,8 +29,11 @@ class Drawing
 		void drawRighArm(); 
 		void drawLeftLeg();
 		void drawRightLeg();
+		void drawPart(int i);
+		void (Drawing::*drawing_functions[7])();
 		
 		void drawLetterSpots(int numLeters);
+		void insertLetter(char letter, std::string word);
 };
 
 #endif

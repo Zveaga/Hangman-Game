@@ -115,3 +115,31 @@ void Drawing::drawLetterSpots(int numLeters)
 		for (int j = 4; j < (numLeters * 2) + 4; j++)
 			canvas[11][++j] = '_';
 }
+
+void Drawing::insertLetter(char letter, std::string word)
+{
+	for (int i = 0; i < word.length(); i++)
+		if (word[i] == letter && word.length() == 1)
+			this->canvas[11][4] = letter;
+		else if (word[i] == letter && i == 0)
+			this->canvas[11][5] = letter;
+		else if (word[i] == letter)
+			this->canvas[11][5 + (i * 2)] = letter;
+}
+
+
+void (Drawing::*drawing_functions[])(void) = 
+{
+	&Drawing::drawPole,
+	&Drawing::drawHead,
+	&Drawing::drawBody,
+	&Drawing::drawLeftArm,
+	&Drawing::drawRighArm,
+	&Drawing::drawLeftLeg,
+	&Drawing::drawRightLeg,
+};
+
+void Drawing::drawPart(int i)
+{
+	(this->*drawing_functions[i])();
+}

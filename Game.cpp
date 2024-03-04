@@ -2,7 +2,8 @@
 
 std::string Game::word = "EMPTY";
 int Game::player_count = 0;
-int Game::lives = 0;
+int Game::lives = 7;
+bool Game::word_guessed = false;
 
 // --Constructors-- //
 // Game::Game()
@@ -67,7 +68,6 @@ void Game::setupGame()
 {
 	//this->setPlayerCount();
 	this->setWord();
-
 	drawing.drawLetterSpots(this->word.length());
 
 
@@ -91,19 +91,77 @@ int Game::getWordLen() const
 	return (this->word.length());
 }
 
-void Game::guessLetter()
+
+char Game::guessLetter() const
+{
+	std::string letter;
+
+	do {
+		std::cout << "Guess letter:\n-> ";
+		std::getline(std::cin, letter);
+		if (letter.empty() || !std::isalpha(letter[0]) || letter.length() > 1)
+		{
+			std::cout << "\nEnter a single letter only!\n";
+			std::cin.clear();
+			continue ;
+		}
+		break ;
+	} while (true);
+	return (std::toupper(letter[0]));
+}
+
+
+bool Game::letterGuessed(char letter) const
+{
+	size_t letter_pos = word.find_first_of(letter);
+	if (letter_pos == std::string::npos)
+		return (false);
+	return (true);
+}
+
+void Game::guessWord(void) const
 {
 	char letter;
+	int	i = 0;
+	do {
+		letter = guessLetter();
+		if (letterGuessed(letter))
+		{
+			std::cout << "Letter Guessed!\n\n";
+			//drawing.insertLetter(letter, this->word);
+			drawing.printCanvas();
+		}
+		else
+		{
+			std::cout << "Letter not guessed!\n\n";
+			drawing.drawPart(i++);
+			drawing.printCanvas();
+			this->lives--;
+		}
 
-	std::cout << "Guess letter\n- ";
-	std::cin >> letter;
-	if (std::cin.fail() || std::cin.peek() != '\n' ||  )
-	{
-		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		this->guessLetter();
-	}
-	
 
+	} while (this->lives > 0);
 
 }
+
+// void Game::insertLetter(char letter)
+// {
+// 	for (int i = 0; i < word.length(); i++)
+// 		if (this->word[i] == letter)
+// 			this->drawing.
+// }
+
+
+
+// void Game::guessLetter()
+// {
+// 	char letter;
+// 	std::cout << "Guess letter\n- ";
+// 	std::cin >> letter;
+// 	if (std::cin.fail() || std::cin.peek() != '\n' ||  )
+// 	{
+// 		std::cin.clear();
+// 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+// 		this->guessLetter();
+// 	}
+// }

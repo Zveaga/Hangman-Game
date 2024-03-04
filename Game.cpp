@@ -90,3 +90,20 @@ int Game::getWordLen() const
 {
 	return (this->word.length());
 }
+
+void Game::guessLetter()
+{
+	char letter;
+
+	std::cout << "Guess letter\n- ";
+	std::cin >> letter;
+	if (std::cin.fail() || std::cin.peek() != '\n' ||  )
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		this->guessLetter();
+	}
+	
+
+
+}

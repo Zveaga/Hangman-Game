@@ -31,6 +31,9 @@ class Game
 
 		int getWordLen() const;
 
+		void guessLetter(void);
+
+
 
 		
 };

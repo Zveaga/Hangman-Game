@@ -22,6 +22,7 @@ int main(void)
 	drawing.drawRightLeg();
 	drawing.printCanvas();
 	
+	game.guessLetter();
 	//std::cout << "\n===============END===============\n";
 	
 	return (0);

@@ -9,8 +9,10 @@ int main(void)
 	Drawing drawing;
 
 	Game game(drawing);
+
 	game.setupGame();
-	game.guessWord();
+	game.startGame();
+	//game.guessWord();
 
 	//std::cout << letter << std::endl;
 	

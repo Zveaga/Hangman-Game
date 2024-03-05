@@ -5,6 +5,7 @@
 Drawing::Drawing()
 {
 	initCanvas();
+	initDrawingFunctions();
 }
 
 // --Destructor-- //
@@ -128,18 +129,38 @@ void Drawing::insertLetter(char letter, std::string word)
 }
 
 
-void (Drawing::*drawing_functions[])(void) = 
+// void (Drawing::*drawing_functions[7])(void) = 
+// {
+// 	&Drawing::drawPole,
+// 	&Drawing::drawHead,
+// 	&Drawing::drawBody,
+// 	&Drawing::drawLeftArm,
+// 	&Drawing::drawRighArm,
+// 	&Drawing::drawLeftLeg,
+// 	&Drawing::drawRightLeg,
+// };
+
+
+void Drawing::initDrawingFunctions()
 {
-	&Drawing::drawPole,
-	&Drawing::drawHead,
-	&Drawing::drawBody,
-	&Drawing::drawLeftArm,
-	&Drawing::drawRighArm,
-	&Drawing::drawLeftLeg,
-	&Drawing::drawRightLeg,
-};
+	drawing_functions[0] = &Drawing::drawPole;
+	drawing_functions[1] = &Drawing::drawHead;
+	drawing_functions[2] = &Drawing::drawBody;
+	drawing_functions[3] = &Drawing::drawLeftArm;
+	drawing_functions[4] = &Drawing::drawRighArm;
+	drawing_functions[5] = &Drawing::drawLeftLeg;
+	drawing_functions[6] = &Drawing::drawRightLeg;
+}
+
 
 void Drawing::drawPart(int i)
 {
 	(this->*drawing_functions[i])();
+}
+
+void Drawing::clearCanvas()
+{
+	for (int i = 1; i < ROWS - 2; i++)
+		for (int j = 1; j < COLS - 2; j++)
+			canvas[i][j] = ' ';
 }

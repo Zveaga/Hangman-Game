@@ -3,7 +3,7 @@
 std::string Game::word = "EMPTY";
 int Game::player_count = 0;
 int Game::lives = 7;
-bool Game::word_guessed = false;
+int Game::guessed_letters = 0;
 
 // --Constructors-- //
 // Game::Game()
@@ -69,15 +69,45 @@ void Game::setupGame()
 	//this->setPlayerCount();
 	this->setWord();
 	drawing.drawLetterSpots(this->word.length());
-
-
-
+	drawing.printCanvas();
 }
 
+std::string Game::getInput(std::string message)
+{
+	std::string input;
+	do
+	{
+		std::getline(std::cin, input);	
+	} while (input.empty());
+
+	return (input);
+	
+}
 
 void Game::startGame()
 {
+	std::string input;
 
+	while (true)
+	{
+		if (guessWord() == true)
+		{
+			std::cout << "YOU GUESSED THE WORD BEFORE BEING HANGED, NICE!\n";
+		}
+		else
+			std::cout << "YOU HAVE BEEN HANGED!" << std::endl;
+		input = getInput("Enter:\n-> (1) to start a new game\n-> (2) to quit game\n");
+		resetGame();	
+		setupGame();
+		if (input[0] == '1')
+		{
+			// resetGame();
+			// setupGame();
+			continue ;
+		}
+		else if (input[0] == '2')
+			break ;
+	}
 }
 
 
@@ -90,7 +120,6 @@ int Game::getWordLen() const
 {
 	return (this->word.length());
 }
-
 
 char Game::guessLetter() const
 {
@@ -110,7 +139,6 @@ char Game::guessLetter() const
 	return (std::toupper(letter[0]));
 }
 
-
 bool Game::letterGuessed(char letter) const
 {
 	size_t letter_pos = word.find_first_of(letter);
@@ -119,30 +147,44 @@ bool Game::letterGuessed(char letter) const
 	return (true);
 }
 
-void Game::guessWord(void) const
+bool Game::guessWord(void) const
 {
 	char letter;
 	int	i = 0;
-	do {
+	while (true)
+	{
 		letter = guessLetter();
 		if (letterGuessed(letter))
 		{
-			std::cout << "Letter Guessed!\n\n";
-			//drawing.insertLetter(letter, this->word);
+			guessed_letters++;
+			if (guessed_letters == word.length())
+				return (true);
+			drawing.insertLetter(letter, this->word);
 			drawing.printCanvas();
+			std::cout << "Letter Guessed!\n\n";
 		}
 		else
 		{
-			std::cout << "Letter not guessed!\n\n";
+			this->lives--;
+			if (this->lives < 0)
+				return (false);
 			drawing.drawPart(i++);
 			drawing.printCanvas();
-			this->lives--;
+			std::cout << "Letter not guessed!\n\n";
 		}
-
-
-	} while (this->lives > 0);
-
+	}
+	//std::cout << "\n\n====GAME OVER====\n";
 }
+
+void Game::resetGame()
+{
+	this->lives = 7;
+	this->player_count = 0;
+	this->word.clear();
+	this->drawing.clearCanvas();
+	this->guessed_letters = 0;
+}
+
 
 // void Game::insertLetter(char letter)
 // {

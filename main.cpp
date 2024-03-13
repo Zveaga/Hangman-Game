@@ -10,11 +10,8 @@ int main(void)
 
 	Game game(drawing);
 
-	//game.setupGame();
 	game.startGame();
-	//game.guessWord();
 
-	//std::cout << letter << std::endl;
 	
 	//std::cout << "\n===============END===============\n";
 	

@@ -6,7 +6,7 @@
 #    By: coxer <coxer@student.codam.nl>               +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/01/31 15:14:30 by coxer         #+#    #+#                  #
-#    Updated: 2024/02/28 19:08:05 by rares         ########   odam.nl          #
+#    Updated: 2024/03/13 16:27:11 by rares         ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ SRC = \
 main.cpp \
 Drawing.cpp \
 Game.cpp \
-Word.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

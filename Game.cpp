@@ -3,7 +3,7 @@
 std::string Game::word = "EMPTY";
 int Game::player_count = 0;
 int Game::lives = 7;
-int Game::guessed_letters = 0;
+// int Game::guessed_letters = 0;
 
 // --Constructors-- //
 // Game::Game()
@@ -106,7 +106,6 @@ void Game::startGame()
 		else if (input[0] == '2')
 			break ;
 		resetGame();
-
 	}
 }
 
@@ -147,7 +146,15 @@ bool Game::letterGuessed(char letter) const
 	return (true);
 }
 
-bool Game::guessWord(void) const
+void Game::appendGuessedLetters(char letter)
+{
+	for (int i = 0; i < word.length(); i++)
+		if (word[i] == letter && guessed_letters.find_first_of(letter))
+			guessed_letters.push_back(letter);
+}
+
+
+bool Game::guessWord(void)
 {
 	char letter;
 	int	i = 0;
@@ -156,9 +163,9 @@ bool Game::guessWord(void) const
 		letter = guessLetter();
 		if (letterGuessed(letter))
 		{
-			guessed_letters++;
+			appendGuessedLetters(letter);
 			drawing.insertLetter(letter, this->word);
-			if (guessed_letters == word.length())
+			if (guessed_letters.length() >= word.length())
 			{
 				drawing.printCanvas();
 				return (true);
@@ -189,7 +196,8 @@ void Game::resetGame()
 	this->player_count = 0;
 	this->word.clear();
 	this->drawing.clearCanvas();
-	this->guessed_letters = 0;
+	// this->guessed_letters = 0;
+	this->guessed_letters.clear();
 }
 
 

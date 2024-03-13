@@ -76,12 +76,6 @@ void Drawing::drawHead()
 
 	canvas[5][33] = '.';
 	canvas[5][35] = '.';
-
-	// std::cout << " ___\n";
-	// std::cout << "/. .\\\n";
-	// std::cout << "\\___/\n";
-	// // std::cout << " -\n";
-
 }
 
 void Drawing::drawBody()

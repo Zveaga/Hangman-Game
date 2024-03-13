@@ -12,7 +12,8 @@ class Game
 		static std::string word;
 		static int player_count;
 		static int lives;
-		static int guessed_letters;
+		//static int guessed_letters;
+		std::string guessed_letters;
 
 		//Word &word;
 	public:
@@ -33,8 +34,9 @@ class Game
 		int getWordLen() const;
 
 		char guessLetter(void) const;
-		bool guessWord(void) const;
+		bool guessWord(void);
 		bool letterGuessed(char letter) const;
+		void appendGuessedLetters(char letter);
 		void insertLetter(char letter);
 		void resetGame();
 		std::string getInput(std::string message) const;

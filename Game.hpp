@@ -37,7 +37,8 @@ class Game
 		bool letterGuessed(char letter) const;
 		void insertLetter(char letter);
 		void resetGame();
-		std::string getInput(std::string message);
+		std::string getInput(std::string message) const;
+		int checkInput(std::string message) const;
 
 
 

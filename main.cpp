@@ -10,7 +10,7 @@ int main(void)
 
 	Game game(drawing);
 
-	game.setupGame();
+	//game.setupGame();
 	game.startGame();
 	//game.guessWord();
 

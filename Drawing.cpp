@@ -36,12 +36,15 @@ void Drawing::initCanvas()
 
 void Drawing::printCanvas()
 {
+	for (int i = 0; i < 6; i++)
+		std::cout << "\n\n\n\n\n\n\n\n\n\n\n";
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
 			std::cout << canvas[i][j];
 		std::cout << std::endl;
 	}
+	//std::cout << "\n\n\n";
 }
 
 void Drawing::drawPole()
